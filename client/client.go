@@ -20,11 +20,14 @@ type Client struct {
 
 // NewClient creates a new BloxOne DDI API Client.
 func NewClient(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+
+	infratransportconfig := infra.DefaultTransportConfig().WithHost("csp.infoblox.com")
+
 	return &Client{
 		IPAddressManagementAPI:      ipamsvc.New(transport, formats),
 		DNSConfigurationAPI:         dns_config.New(transport, formats),
 		DNSDataAPI:                  dns_data.New(transport, formats),
-		InfrastructureManagementAPI: infra.New(transport, formats),
+		InfrastructureManagementAPI: infra.NewHTTPClientWithConfig(formats, infratransportconfig),
 	}
 }
 
