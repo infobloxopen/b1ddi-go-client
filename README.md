@@ -7,6 +7,7 @@ The following BloxOne DDI APIs are supported:
 - [IP Address Management (Ipamsvc API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/Ipamsvc)
 - [DNS Configuration (DNSConfig API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/DnsConfig)
 - [DNS Data (DnsData API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/DnsData)
+- [Bloxone Cloud Infrastructure Management](https://csp.infoblox.com/apidoc?url=https:/csp.infoblox.com/apidoc/docs/Infrastructure)
 
 # Installation
 
