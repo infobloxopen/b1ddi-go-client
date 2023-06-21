@@ -6,22 +6,25 @@ import (
 	"github.com/go-openapi/strfmt"
 	"github.com/infobloxopen/b1ddi-go-client/dns_config"
 	"github.com/infobloxopen/b1ddi-go-client/dns_data"
+	"github.com/infobloxopen/b1ddi-go-client/infra"
 	"github.com/infobloxopen/b1ddi-go-client/ipamsvc"
 )
 
 // Client is an aggregation of different BloxOne DDI API clients.
 type Client struct {
-	IPAddressManagementAPI *ipamsvc.IPAddressManagementAPI
-	DNSConfigurationAPI    *dns_config.DNSConfigurationAPI
-	DNSDataAPI             *dns_data.DNSDataAPI
+	IPAddressManagementAPI      *ipamsvc.IPAddressManagementAPI
+	DNSConfigurationAPI         *dns_config.DNSConfigurationAPI
+	DNSDataAPI                  *dns_data.DNSDataAPI
+	InfrastructureManagementAPI *infra.InfrastructureManagementAPI
 }
 
 // NewClient creates a new BloxOne DDI API Client.
 func NewClient(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
 	return &Client{
-		IPAddressManagementAPI: ipamsvc.New(transport, formats),
-		DNSConfigurationAPI:    dns_config.New(transport, formats),
-		DNSDataAPI:             dns_data.New(transport, formats),
+		IPAddressManagementAPI:      ipamsvc.New(transport, formats),
+		DNSConfigurationAPI:         dns_config.New(transport, formats),
+		DNSDataAPI:                  dns_data.New(transport, formats),
+		InfrastructureManagementAPI: infra.New(transport, formats),
 	}
 }
 
