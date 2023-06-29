@@ -48,5 +48,16 @@ func main() {
 	for _, subnet := range subnetList.Payload.Results {
 		fmt.Printf("%s/%d\n", *subnet.Address, subnet.Cidr)
 	}
+
+	// Get all hosts using Infrastructure Management client
+	hostList, err := client.InfrastructureManagementAPI.Hosts.HostsList(nil, nil)
+	if err != nil {
+		panic(err)
+	}
+
+	// Print subnet mask for each subnet
+	for _, host := range hostList.Payload.Results {
+		fmt.Printf("%s\n", *host.DisplayName)
+	}
 }
 ```
