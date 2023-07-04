@@ -34,7 +34,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/hardware_filter"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Comment\",\"name\":null}\n")),
 			},
 		},
 		{
@@ -99,7 +99,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/hardware_filter/hardware-filter-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name\":null}\n")),
 			},
 		},
 	}

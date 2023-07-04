@@ -101,7 +101,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/fixed_address/fixed-address-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":null,\"comment\":\"Updated comment\",\"match_type\":null,\"match_value\":null}\n")),
 			},
 		},
 	}

@@ -29,7 +29,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/ip_space/bulk_copy"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"copy_objects\":null}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"copy_objects\":null,\"target\":null}\n")),
 			},
 		},
 		{
@@ -113,7 +113,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/ip_space/ip-space-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name\":null}\n")),
 			},
 		},
 	}

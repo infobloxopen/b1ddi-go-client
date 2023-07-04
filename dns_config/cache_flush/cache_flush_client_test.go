@@ -6,7 +6,6 @@ import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
 	"github.com/infobloxopen/b1ddi-go-client/models"
 	"github.com/infobloxopen/b1ddi-go-client/runtimetest"
 	"io"
@@ -27,7 +26,7 @@ func TestClient(t *testing.T) {
 			"CacheFlushCreate",
 			&CacheFlushCreateParams{
 				Body: &models.ConfigCacheFlush{
-					Ophid: swag.String("oph_id"),
+					Ophid: "oph_id",
 				},
 				Context: context.TODO(),
 			},

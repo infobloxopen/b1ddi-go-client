@@ -51,7 +51,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/view"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"name\":\"test_view\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"filter_aaaa_acl\":null,\"name\":\"test_view\"}\n")),
 			},
 		},
 		{
@@ -117,7 +117,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/view/view-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name\":\"test_view\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"filter_aaaa_acl\":null,\"name\":\"test_view\"}\n")),
 			},
 		},
 	}

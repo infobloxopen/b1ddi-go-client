@@ -48,7 +48,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/subnet"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"address\":\"192.168.1.0\",\"cidr\":24,\"space\":\"ip-space-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":\"192.168.1.0\",\"cidr\":24,\"space\":\"ip-space-id\",\"usage\":null}\n")),
 			},
 		},
 		{
@@ -142,7 +142,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/subnet/subnet-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":null,\"comment\":\"Updated comment\",\"space\":null,\"usage\":null}\n")),
 			},
 		},
 	}

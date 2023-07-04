@@ -66,7 +66,7 @@ func TestClient(t *testing.T) {
 					Path: "/api/ddi/v1/dhcp/global",
 				},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"kerberos_keys\":null}\n")),
 			},
 		},
 		{

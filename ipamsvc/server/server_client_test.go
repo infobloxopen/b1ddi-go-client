@@ -32,7 +32,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/server"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"kerberos_keys\":null,\"name\":null}\n")),
 			},
 		},
 		{
@@ -97,7 +97,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/server/server-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"kerberos_keys\":null,\"name\":null}\n")),
 			},
 		},
 	}

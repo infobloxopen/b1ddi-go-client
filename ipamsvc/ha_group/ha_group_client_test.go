@@ -34,7 +34,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/ha_group"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"name\":\"test-ha-group-name\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"hosts\":null,\"name\":\"test-ha-group-name\"}\n")),
 			},
 		},
 		{
@@ -97,7 +97,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/ha_group/ha-group-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"hosts\":null,\"name\":null}\n")),
 			},
 		},
 	}

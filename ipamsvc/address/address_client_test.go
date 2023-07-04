@@ -102,7 +102,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/address/address-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"New comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":null,\"comment\":\"New comment\",\"space\":null}\n")),
 			},
 		},
 	}

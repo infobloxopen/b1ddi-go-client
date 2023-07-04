@@ -32,7 +32,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/option_filter"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"name\":\"test_name\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"name\":\"test_name\",\"rules\":null}\n")),
 			},
 		},
 		{
@@ -97,7 +97,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dhcp/option_filter/option-filter-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name\":null,\"rules\":null}\n")),
 			},
 		},
 	}

@@ -45,7 +45,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/auth_zone"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"fqdn\":\"test.com.\",\"primary_type\":\"cloud\",\"view\":\"dns-view-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"external_providers\":null,\"fqdn\":\"test.com.\",\"primary_type\":\"cloud\",\"view\":\"dns-view-id\",\"warnings\":null}\n")),
 			},
 		},
 		{
@@ -106,7 +106,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/auth_zone/auth-zone-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"fqdn\":\"test.com.\",\"primary_type\":\"cloud\",\"view\":\"dns-view-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"external_providers\":null,\"fqdn\":\"test.com.\",\"primary_type\":\"cloud\",\"view\":\"dns-view-id\",\"warnings\":null}\n")),
 			},
 		},
 	}

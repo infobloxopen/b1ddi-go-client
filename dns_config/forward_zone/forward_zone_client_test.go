@@ -48,7 +48,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/forward_zone"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"fqdn\":\"test.com.\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"fqdn\":\"test.com.\",\"warnings\":null}\n")),
 			},
 		},
 		{
@@ -110,7 +110,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/forward_zone/forward-zone-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"fqdn\":\"test.com.\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"fqdn\":\"test.com.\",\"warnings\":null}\n")),
 			},
 		},
 	}

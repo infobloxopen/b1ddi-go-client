@@ -47,7 +47,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/address_block"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"address\":\"192.168.1.0\",\"cidr\":24}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":\"192.168.1.0\",\"cidr\":24,\"space\":null,\"usage\":null}\n")),
 			},
 		},
 		{
@@ -202,7 +202,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/address_block/address-block-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"address\":null,\"comment\":\"Updated comment\",\"space\":null,\"usage\":null}\n")),
 			},
 		},
 	}

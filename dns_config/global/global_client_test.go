@@ -56,7 +56,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/global"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"id\":\"global-update-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"filter_aaaa_acl\":null,\"id\":\"global-update-id\"}\n")),
 			},
 		},
 		{
@@ -71,7 +71,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/global/global-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"id\":\"global-update-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"filter_aaaa_acl\":null,\"id\":\"global-update-id\"}\n")),
 			},
 		},
 	}

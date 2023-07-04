@@ -32,7 +32,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/host"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"host_names\":null,\"name\":null}\n")),
 			},
 		},
 		{
@@ -96,7 +96,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/ipam/host/ipam-host-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"host_names\":null,\"name\":null}\n")),
 			},
 		},
 	}

@@ -35,7 +35,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/record"},
 				Method: http.MethodPost,
-				Body:   io.NopCloser(strings.NewReader("{\"name_in_zone\":\"record\",\"rdata\":{\"address\":\"192.168.1.15\"},\"zone\":\"dns-zone-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"name_in_zone\":\"record\",\"rdata\":{\"address\":\"192.168.1.15\"},\"type\":null,\"zone\":\"dns-zone-id\"}\n")),
 			},
 		},
 		{
@@ -112,7 +112,7 @@ func TestClient(t *testing.T) {
 			http.Request{
 				URL:    &url.URL{Path: "/api/ddi/v1/dns/record/record-update-id"},
 				Method: http.MethodPatch,
-				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name_in_zone\":\"record\",\"rdata\":{\"address\":\"192.168.1.15\"},\"zone\":\"dns-zone-id\"}\n")),
+				Body:   io.NopCloser(strings.NewReader("{\"comment\":\"Updated comment\",\"name_in_zone\":\"record\",\"rdata\":{\"address\":\"192.168.1.15\"},\"type\":null,\"zone\":\"dns-zone-id\"}\n")),
 			},
 		},
 	}
