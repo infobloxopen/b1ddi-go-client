@@ -4,6 +4,7 @@ package client
 import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
+
 	"github.com/infobloxopen/b1ddi-go-client/dns_config"
 	"github.com/infobloxopen/b1ddi-go-client/dns_data"
 	"github.com/infobloxopen/b1ddi-go-client/ipamsvc"
