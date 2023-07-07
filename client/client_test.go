@@ -19,6 +19,7 @@ func TestNewClient(t *testing.T) {
 	assert.NotNil(t, cli.DNSDataAPI)
 	assert.NotNil(t, cli.InfrastructureManagementAPI)
 	assert.NotNil(t, cli.B1TDCloudAPI)
+	assert.NotNil(t, cli.B1tdDfpAPI)
 }
 
 func TestB1DDIAPIKey(t *testing.T) {
