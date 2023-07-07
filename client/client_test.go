@@ -2,25 +2,23 @@ package client
 
 import (
 	"fmt"
+	"testing"
+
 	"github.com/go-openapi/runtime"
-	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestNewClient(t *testing.T) {
-	// create the transport
-	transport := httptransport.New(
-		"", "api/ddi/v1", nil,
-	)
-
-	cli := NewClient(transport, strfmt.Default)
+	// transport is created inside the client now, passing in the host as the first parameter
+	cli := NewClient("", "", strfmt.Default)
 
 	assert.NotNil(t, cli)
 	assert.NotNil(t, cli.IPAddressManagementAPI)
 	assert.NotNil(t, cli.DNSConfigurationAPI)
 	assert.NotNil(t, cli.DNSDataAPI)
+	assert.NotNil(t, cli.InfrastructureManagementAPI)
+	assert.NotNil(t, cli.B1TDCloudAPI)
 }
 
 func TestB1DDIAPIKey(t *testing.T) {
