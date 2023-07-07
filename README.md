@@ -7,7 +7,9 @@ The following BloxOne DDI APIs are supported:
 - [IP Address Management (Ipamsvc API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/Ipamsvc)
 - [DNS Configuration (DNSConfig API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/DnsConfig)
 - [DNS Data (DnsData API)](https://csp.infoblox.com/apidoc/?url=https://csp.infoblox.com/apidoc/docs/DnsData)
-- [Bloxone Cloud Infrastructure Management](https://csp.infoblox.com/apidoc?url=https:/csp.infoblox.com/apidoc/docs/Infrastructure)
+- [Bloxone Cloud Infrastructure Management](https://csp.infoblox.com/apidoc?url=https://csp.infoblox.com/apidoc/docs/Infrastructure)
+- [Bloxone Threat Defense Management](https://csp.infoblox.com/apidoc?url=https://csp.infoblox.com/apidoc/docs/Atcfw)
+- [Bloxone DFP Management](https://csp.infoblox.com/apidoc?url=https://csp.infoblox.com/apidoc/docs/Atcdfp)
 
 # Installation
 
@@ -70,5 +72,14 @@ func main() {
 		fmt.Printf("%s\n", list.Name)
 	}
 
+	// Get all DFPs using the b1td_dfp client
+	dfpList, err := client.B1tdDfpAPI.Dfp.DfpListDfp(nil, nil)
+	if err != nil {
+		panic(err)
+	}
+
+	for _, dfp := range dfpList.Payload.Results {
+		fmt.Printf("%s\n", dfp.Name)
+	}
 }
 ```
